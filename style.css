@@ -2846,7 +2846,10 @@ button {
     font-size: 14px;
   }
 
-
+  /* ================= RESET ALL SCALES ================= */
+  * {
+    transform: none !important;
+  }
 
   /* ================= GLOBAL ================= */
   section {
@@ -3091,48 +3094,116 @@ button {
 
 }
 
-/* ===== CONTACT : SIMPLE SINGLE COLUMN (MOBILE) ===== */
+
+/* ===== CONTACT FORM : MOBILE FLEX CARD ===== */
+/* ===== CONTACT SECTION : MOBILE SINGLE COLUMN FLOAT ===== */
 @media (max-width: 768px) {
 
-  .contact-section{
-    height:200px;
-  }
-  /* main layout */
+  /* main wrapper */
   .contact-main {
-    
-    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
   }
 
-  /* contact info full width */
-  .contact-info {
-    position: static;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    left: 0;
-  }
-
-  /* form full width */
+  /* FORM CARD (PURPLE) */
   .contact-form {
     width: 100%;
-    max-width: 100%;
-    padding: 30px 20px;
-    
-    border-radius: 24px;
+    max-width: 360px;
+    padding: 80px 20px 30px; /* top space for floating card */
+    border-radius: 28px;
+    background: #6c2db5;
+    margin: 0 auto;
+    position: relative;
   }
 
-  /* FORCE single column inputs */
+  /* FLOATING INFO CARD */
+  .contact-info {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 300px;
+
+    background: #fff;
+    padding: 20px 18px;
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+    z-index: 5;
+  }
+
+  .contact-info h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .contact-info .subtitle {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .info-item {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .info-item strong {
+    font-size: 13px;
+  }
+
+  .info-item span {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .qr {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .qr img {
+    width: 90px;
+  }
+
+  /* FORM LAYOUT */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
   .row {
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
 
-  .field {
+  label {
+    font-size: 13px;
+    color: #fff;
+  }
+
+  input,
+  select,
+  textarea {
     width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 14px;
   }
 
-  /* button full width (optional) */
+  textarea {
+    height: 120px;
+  }
+
   button {
-    width: 100%;
+    align-self: flex-start;
+    padding: 10px 18px;
+    font-size: 13px;
+    border-radius: 8px;
+    background: #4a6cf7;
+    color: #fff;
   }
 }
