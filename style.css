@@ -1249,18 +1249,21 @@ select {
   max-width: 360px;
   border-radius: 18px;
   margin-left: 78px;
- margin-top:-280px ;
+ margin-top:-250px ;
   box-shadow: 0 25px 45px rgba(0,0,0,0.25);
 }
 
 /* RESPONSIVE */
 
    .testimonial-section {
-      padding: 80px 20px;
+      /* padding: 80px 20px; */
+      
       text-align: center;
        transform: scale(1.05);
+      background-color: #f7f9fb;
   transform-origin: top center;
-  margin: 120px 0; 
+  height: 600px;
+  padding: 50px 20px;
     }
 
     .testimonial-title {
@@ -1336,6 +1339,7 @@ select {
       display: flex;
       justify-content: center;
       gap: 10px;
+      
     }
 
     .testimonial-dots span {
