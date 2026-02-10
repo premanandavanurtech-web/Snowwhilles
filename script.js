@@ -168,3 +168,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+function initHamburger() {
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
+  
+  if (!hamburger || !menu) {
+    console.log("Hamburger or menu not found");
+    return;
+  }
+  
+  hamburger.addEventListener("click", function () {
+    menu.classList.toggle("active");
+    const icon = hamburger.querySelector("i");
+    
+    if (menu.classList.contains("active")) {
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-xmark");
+    } else {
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+    }
+  });
+}
+
+// Load Header
+fetch("/components/header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+    initHamburger();
+  })
+  .catch(err => console.error("Header load failed:", err));
+
+// Load Footer
+fetch("/components/footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  })
+  .catch(err => console.error("Footer load failed:", err));
