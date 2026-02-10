@@ -94,14 +94,20 @@ html, body {
   font-weight: 700;
   color: #6c2db5;
   display: block;
+  
 }
 
 .text_num p {
   font-size: 14px;
   font-weight: 400;
   color: #000;
+
+
 }
 
+#para{
+  margin-top: 15px;
+}
 /* ================= CONTACT BUTTON ================= */
 .contact-btn {
   background: #6c2db5;
@@ -109,10 +115,10 @@ html, body {
   border: none;
   padding: 12px 26px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 200;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 70px;
+  margin-left: 80px;
 }
 
 /* ================= NAVBAR ================= */
@@ -146,7 +152,17 @@ html, body {
   gap: 10px;
 }
 
-.fb {
+.fa-facebook {
+  width: 36px;
+  height: 36px;
+  background: #e94b64;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fa-instagram {
   width: 36px;
   height: 36px;
   background: #e94b64;
@@ -1390,7 +1406,7 @@ select {
 .footer {
   background: #23201e;
   color: white;
-  padding: 40px 20px ;
+  padding: 60px 20px ;
  
 
   font-size: 15px;
@@ -1408,7 +1424,7 @@ select {
   display: grid;
   grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
   gap: 60px;
-  margin-top:60px ;
+  margin-top:80px ;
 }
 
 /* LOGO */
@@ -1492,11 +1508,11 @@ select {
 
 /* FOOTER BOTTOM */
 .footer-bottom {
-  margin-top: -30px;
-  padding-top:20px;
+  margin-top: 40px;
+  
   text-align: center;
-  font-size: 15px;
-  font-weight:600;
+  font-size: 12px;
+  font-weight:300;
   color: rgb(220, 217, 217);
   position: relative;
 }
@@ -1510,6 +1526,8 @@ select {
   width: 1000px;   /* 👈 line length */
   height: 1px;
   background-color:#333;
+  margin-top: -16px;
+
 }
 
 
