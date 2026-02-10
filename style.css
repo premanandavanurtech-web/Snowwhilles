@@ -295,7 +295,7 @@ html, body {
   left: -40px;
   width: 380px;
   height: 380px;
-  background: url("https://i.imgur.com/0Z8FQ3B.png") no-repeat center;
+  /* background: url("https://i.imgur.com/0Z8FQ3B.png") no-repeat center; */
   background-size: contain;
   opacity: 0.08;
   z-index: 1;
@@ -2846,10 +2846,7 @@ button {
     font-size: 14px;
   }
 
-  /* ================= RESET ALL SCALES ================= */
-  * {
-    transform: none !important;
-  }
+
 
   /* ================= GLOBAL ================= */
   section {
@@ -3007,20 +3004,135 @@ button {
     width: 90%;
   }
 
-  /* ================= CONTACT ================= */
-  .contact-main {
-    flex-direction: column;
+ 
+ 
+
+}
+
+@media (max-width: 768px) {
+  .partners-title {
+    font-size: 21px;
+    margin-bottom: 25px;
   }
 
+  .partners-track {
+    gap: 0px;
+    animation-duration: 18s;
+  }
+
+  .partners-track img {
+    height: 50px;
+  }
+  
+}
+/* ===== ABOUT SECTION : MOBILE ONLY ===== */
+@media (max-width: 768px) {
+
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-left h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .para_text1,
+  .para_text2 {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .feature {
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .feature-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .about-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* RIGHT SIDE FIX */
+  .about-right {
+    width: 100%;
+  }
+
+  .image-stack {
+    width: 100%;
+  }
+
+  .img-main {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  /* Hide decorative images on mobile */
+  .image-overlay,
+  .innerimg,
+  .inneryello {
+    display: none;
+  }
+
+  /* Stats card mobile safe */
+  .stats-card {
+    position: static;
+    width: 100%;
+    margin-top: 16px;
+    justify-content: center;
+  }
+
+}
+
+/* ===== CONTACT : SIMPLE SINGLE COLUMN (MOBILE) ===== */
+@media (max-width: 768px) {
+
+  .contact-section{
+    height:200px;
+  }
+  /* main layout */
+  .contact-main {
+    
+    gap: 24px;
+  }
+
+  /* contact info full width */
   .contact-info {
     position: static;
     width: 100%;
-    margin: 0 0 20px;
+    max-width: 100%;
+    margin: 0;
     left: 0;
   }
 
+  /* form full width */
   .contact-form {
+    width: 100%;
+    max-width: 100%;
     padding: 30px 20px;
-    margin-top: 0;
+    
+    border-radius: 24px;
+  }
+
+  /* FORCE single column inputs */
+  .row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .field {
+    width: 100%;
+  }
+
+  /* button full width (optional) */
+  button {
+    width: 100%;
   }
 }
