@@ -207,3 +207,62 @@ fetch("/components/footer.html")
     document.getElementById("footer").innerHTML = data;
   })
   .catch(err => console.error("Footer load failed:", err));
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const counter = document.querySelector(".count-number");
+  let started = false;
+
+  function startCount() {
+    if (!counter) return;
+
+    const target = +counter.getAttribute("data-target");
+    let count = 0;
+    const speed = 130; // smaller = faster
+
+    const updateCount = () => {
+      const increment = Math.ceil(target / speed);
+
+      count += increment;
+      if (count < target) {
+        counter.innerText = count;
+        requestAnimationFrame(updateCount);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCount();
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting && !started) {
+        started = true;
+        startCount();
+      }
+    },
+    { threshold: 0.6 }
+  );
+
+  observer.observe(counter);
+});
+
+if (window.innerWidth <= 480) {
+  const track = document.querySelector(".partners-track");
+  const logos = document.querySelectorAll(".partners-track img");
+
+  let index = 0;
+  const visible = 2;
+
+  setInterval(() => {
+    index += visible;
+
+    if (index >= logos.length) {
+      index = 0;
+    }
+
+    const slideWidth = logos[0].offsetWidth + 20;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  }, 2500);
+}
