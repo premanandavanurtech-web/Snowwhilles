@@ -1859,6 +1859,7 @@ body {
   position: absolute;
   background: #6d28d9;              /* Purple */
   color: #fff;
+
   
   padding: 20px 65px;
   border-radius: 18px;
@@ -1873,7 +1874,7 @@ body {
 .stats-icon {
   width: 48px;
   height: 48px;
-  margin-left:-26px;
+  margin-left:-46px;
   background: #ffffff;
   color: #6d28d9;
 
@@ -1889,15 +1890,17 @@ body {
 /* TEXT */
 .stats-text h3 {
   font-family: "Montserrat", sans-serif;
-  font-size: 34px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1;
+  
   
 }
 
 .stats-text p {
   margin: 4px 0 0;
   font-size: 14px;
+  
   opacity: 0.95;
    font-family: "Montserrat", sans-serif;
 }
