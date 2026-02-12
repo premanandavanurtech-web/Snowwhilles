@@ -142,3 +142,89 @@ document.addEventListener("DOMContentLoaded", () => {
     startAuto();
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const heroSlider = document.querySelector(".hero-slider");
+  const slides = document.querySelectorAll(".hero-slider .slide");
+  const dots = document.querySelectorAll(".dots .dot");
+  const prevBtn = document.querySelector(".arrow.left");
+  const nextBtn = document.querySelector(".arrow.right");
+
+  if (!heroSlider || !slides.length) return;
+
+  let currentIndex = 0;
+  let startX = 0;
+  let isDragging = false;
+
+  function showSlide(index) {
+    slides.forEach(s => s.classList.remove("active"));
+    dots.forEach(d => d.classList.remove("active"));
+
+    slides[index].classList.add("active");
+    dots[index]?.classList.add("active");
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    currentIndex =
+      (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  /* arrows */
+  nextBtn?.addEventListener("click", nextSlide);
+  prevBtn?.addEventListener("click", prevSlide);
+
+  /* dots */
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      showSlide(currentIndex);
+    });
+  });
+
+  /* mouse drag */
+  heroSlider.addEventListener("mousedown", (e) => {
+    startX = e.clientX;
+    isDragging = true;
+  });
+
+  heroSlider.addEventListener("mouseup", (e) => {
+    if (!isDragging) return;
+
+    const diff = e.clientX - startX;
+    if (diff > 60) prevSlide();
+    if (diff < -60) nextSlide();
+
+    isDragging = false;
+  });
+
+  heroSlider.addEventListener("mouseleave", () => {
+    isDragging = false;
+  });
+
+  /* touch swipe */
+  heroSlider.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  heroSlider.addEventListener("touchend", (e) => {
+    const diff = e.changedTouches[0].clientX - startX;
+    if (diff > 60) prevSlide();
+    if (diff < -60) nextSlide();
+  });
+});
