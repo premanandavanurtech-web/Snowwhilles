@@ -1,70 +1,75 @@
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* =========================
-     HERO SLIDER
-  ========================== */
+ const slider = document.querySelector(".hero-slider");
   const slides = document.querySelectorAll(".slide");
   const dots = document.querySelectorAll(".dot");
-  const nextBtn = document.querySelector(".arrow.right");
   const prevBtn = document.querySelector(".arrow.left");
+  const nextBtn = document.querySelector(".arrow.right");
 
-  let currentSlide = 0;
+  let currentIndex = 0;
+  let startX = 0;
+  let isDragging = false;
 
-  if (slides.length) {
-    function showSlide(index) {
-      slides.forEach(s => s.classList.remove("active"));
-      dots.forEach(d => d.classList.remove("active"));
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
 
-      slides[index].classList.add("active");
-      dots[index].classList.add("active");
-    }
-
-    nextBtn?.addEventListener("click", () => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    });
-
-    prevBtn?.addEventListener("click", () => {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    });
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        currentSlide = index;
-        showSlide(currentSlide);
-      });
-    });
-
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 5000);
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
   }
 
-
-  /* =========================
-     PARTNERS LOGO SLIDER
-  ========================== */
-  const partnersTrack = document.querySelector(".partners-track");
-  const logos = document.querySelectorAll(".partners-track img");
-
-  if (partnersTrack && logos.length) {
-    const visible = 4;
-    const logoWidth = logos[0].offsetWidth + 40;
-    let logoIndex = 0;
-
-    setInterval(() => {
-      logoIndex++;
-      if (logoIndex > logos.length - visible) logoIndex = 0;
-      partnersTrack.style.transform = `translateX(-${logoIndex * logoWidth}px)`;
-    }, 2500);
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
   }
 
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  /* Arrow buttons */
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  /* Dot click */
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      showSlide(currentIndex);
+    });
+  });
+
+  /* ===== MOUSE DRAG (DESKTOP) ===== */
+  slider.addEventListener("mousedown", (e) => {
+    startX = e.clientX;
+    isDragging = true;
+  });
+
+  slider.addEventListener("mouseup", (e) => {
+    if (!isDragging) return;
+    const diff = e.clientX - startX;
+
+    if (diff > 80) prevSlide();       // drag right
+    if (diff < -80) nextSlide();      // drag left
+
+    isDragging = false;
+  });
+
+  slider.addEventListener("mouseleave", () => {
+    isDragging = false;
+  });
+
+  /* ===== TOUCH SWIPE (MOBILE) ===== */
+  slider.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+
+    if (diff > 60) prevSlide();       // swipe right
+    if (diff < -60) nextSlide();      // swipe left
+  });
 
   /* =========================
      SINGLE COUNTER
@@ -164,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-});
+
 
 
 
