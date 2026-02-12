@@ -249,6 +249,16 @@ html, body {
   display: block;
 }
 
+.about_ul{
+  margin-top: 15px;
+}
+
+.about_para{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: black;
+  font-weight: 500;
+}
 /* ARROWS */
 .arrow {
   position: absolute;
@@ -1708,7 +1718,7 @@ body {
 .about-content {
   max-width: 600px;
   margin-top:100px;
-  padding-left: 220px;
+  padding-left: 20px;
   color: #fff;
 }
 
@@ -1717,13 +1727,17 @@ body {
   font-weight: 700;
   font-family: "Work Sans", sans-serif;
   margin-bottom: 20px;
+
+
 }
 
 .about-content p {
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
-  line-height: 10px;
+  /* line-height: 10px; */
   width: 470px;
+  color: black;
+    font-weight: 500;
 }
 
 
@@ -1888,15 +1902,15 @@ body {
 /* RIGHT CONTENT */
 .about-content h2 {
   font-size: 42px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   color: #000;
    font-family: "Work Sans", sans-serif;
 }
 
 .about-content p {
   font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 15px;
+  line-height: 1.5;
+  /* margin-bottom: 15px; */
   color: #000;
    font-family: "Montserrat", sans-serif;
 }
