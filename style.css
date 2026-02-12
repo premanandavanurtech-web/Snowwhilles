@@ -1320,10 +1320,13 @@ select {
     }
 
     .testimonial-title {
-      font-size: 36px;
+      font-size: 42px;
+      font-family: "Work Sans", sans-serif;
       font-weight: 700;
       margin-bottom: 50px;
       color: #0f172a;
+      text-align: start;
+      margin-left:150px;
     }
 
     /* slider */
@@ -1675,7 +1678,7 @@ body {
 
 .about-hero {
   width: 100%;
-  min-height: 460px;
+  min-height: 400px;
   
 
   /* 🔥 PERFECT COLOR BLEND */
@@ -1696,7 +1699,7 @@ body {
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
-
+  
   display: flex;
   align-items: center;
 }
@@ -1704,19 +1707,23 @@ body {
 /* TEXT AREA */
 .about-content {
   max-width: 600px;
-  padding-left: 80px;
+  margin-top:100px;
+  padding-left: 220px;
   color: #fff;
 }
 
 .about-content h1 {
   font-size: 56px;
   font-weight: 700;
+  font-family: "Work Sans", sans-serif;
   margin-bottom: 20px;
 }
 
 .about-content p {
   font-size: 18px;
-  line-height: 1.8;
+  font-family: "Montserrat", sans-serif;
+  line-height: 10px;
+  width: 470px;
 }
 
 
@@ -1863,7 +1870,7 @@ body {
 
 /* TEXT */
 .stats-text h3 {
- 
+  font-family: "Montserrat", sans-serif;
   font-size: 34px;
   font-weight: 700;
   line-height: 1;
@@ -1874,6 +1881,7 @@ body {
   margin: 4px 0 0;
   font-size: 14px;
   opacity: 0.95;
+   font-family: "Montserrat", sans-serif;
 }
 
 
@@ -1882,6 +1890,7 @@ body {
   font-size: 42px;
   margin-bottom: 20px;
   color: #000;
+   font-family: "Work Sans", sans-serif;
 }
 
 .about-content p {
@@ -1889,6 +1898,7 @@ body {
   line-height: 1.8;
   margin-bottom: 15px;
   color: #000;
+   font-family: "Montserrat", sans-serif;
 }
 
 #pname{
@@ -1899,11 +1909,13 @@ body {
   padding-left: 20px;
   margin-bottom: 20px;
   color: #000;
+
 }
 
 .about-content li {
   margin-bottom: 10px;
   color: #000;
+  font-family: "Montserrat", sans-serif;
 }
 
 .about-content .highlight {
@@ -1924,9 +1936,9 @@ body {
 .mvf-row {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 60px;
+  gap: 30px;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .mvf-row.reverse {
@@ -1935,35 +1947,65 @@ body {
 
 /* TEXT */
 .mvf-text h3 {
-  font-size: 58px;
-  margin-bottom: 22px;
+ font-family: "Work Sans", sans-serif;
+  font-size: 46px;
+  margin-bottom: 12px;
   font-weight: 700;
   color: #111;
   
 }
 
 .mvf-text p {
-  font-size: 25px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
-  color: #444;
+  color:black;
+  font-weight:500;
   margin-bottom: 14px;
 }
 
-/* IMAGE */
-.mvf-image img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
+.mvf-image img{
   border-radius: 20px;
+}
+
+/* IMAGE */
+.mvf-image.founder {
+  width: 100%;
+  max-width: 550px;
+  height: 550px;
+  
+  display: flex;
+  align-items: center;       /* vertical alignment */
+  justify-content: flex-start; /* LEFT */
+  overflow: hidden;
+  margin-left: 20px;
+  
+}
+
+.h3_founder{
+  margin-top:20px;
 }
 
 /* FOUNDER IMAGE */
 .mvf-image.founder img {
-  height:550px;
-  max-width: 680px;
-  
+  width: 430px;        /* 👈 control image size here */
+  height: auto;        /* keep full image */
+  object-fit: contain;
+  margin: 0; 
+  position: relative;
+  left:130px;  
+  top:40px  ; 
+  border-radius: 0;
 }
 
+
+
+.founder_text{
+  width: 500px;
+  text-align: justify;
+  margin-top: 70px;
+  margin-left: -30px;
+}
 
 
 .service-hero {
