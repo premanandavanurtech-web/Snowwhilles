@@ -2,6 +2,24 @@ html, body {
   overflow-x: hidden;
 }
 
+
+
+.hero-slider img,
+.partners-track img {
+  -webkit-user-drag: none; /* Chrome, Safari */
+  user-drag: none;
+  pointer-events: none;    /* 🔥 stops image ghost */
+  user-select: none;
+}
+
+
+.partners-track img {
+  -webkit-user-drag: none;   /* Chrome / Safari */
+  user-drag: none;
+  user-select: none;
+  pointer-events: none;     /* 🔥 stops tiny image preview */
+}
+
 /* ================= TOP BAR ================= */
 .top-bar {
   background: #fff;
@@ -403,29 +421,35 @@ html, body {
 
 .partners-title {
   text-align: center;
-  font-size: 22px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 42px;
   margin-bottom: 30px;
 }
-
+/* VIEWPORT */
 .partners-slider {
-  max-width: 720px;
+  max-width: 850px;
   margin: auto;
   overflow: hidden;
 }
 
 .partners-track {
   display: flex;
-  gap: 30px;
+  gap: 25px;   /* adjusted so 4 fit */
 }
 
+/* BIG IMAGE – NO BACKGROUND */
 .partners-track img {
-  width: 150px;
-  height: 90px;
-  padding: 12px;
+  width: 200px;        /* increased */
+  height: 150px;       /* increased */
+  padding: 0;          /* 🔥 no padding */
   object-fit: contain;
-  background: #f2f2f2;
-  border-radius: 8px;
+  border-radius: 0;    /* 🔥 no rounded bg feel */
+  background: none;    /* 🔥 bg removed */
 }
+
+
+
+
 
 
 
