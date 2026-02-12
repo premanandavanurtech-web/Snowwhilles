@@ -244,7 +244,7 @@ html, body {
 /* ===== DESKTOP INSURANCE BENEFITS ===== */
 .insurance-benefits-section {
   padding: 80px 40px;
-  background: #faf7fb;
+ 
 }
 
 .insurance-benefits-card {
@@ -252,10 +252,11 @@ html, body {
   margin: auto;
   background: #ffffff;
   border-radius: 26px;
-  padding: 40px 60px;
+  /* padding: 70px 40px; */
+  padding:45px 49px;
   display: grid;
   grid-template-columns: 1fr 1.4fr;
-  gap: 60px;
+  border: 0.5px rgb(236, 226, 226) solid;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
  
 }
@@ -268,15 +269,19 @@ html, body {
   font-weight: 800;
   line-height: 1.15;
   color: #0f0f0f;
+  
+  
 }
 
 /* RIGHT LIST */
 .benefits-right {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   position: relative;
-  margin-left: 90px;
+  margin-left: 100px;
+  width: 530px;
+
 }
 
 /* ITEM */
@@ -289,8 +294,8 @@ html, body {
 
 /* ICON */
 .benefit-icon {
-  width: 56px;
-  height: 56px;
+  width: 66px;
+  height: 66px;
   border-radius: 50%;
   background: #fff4ef;
   display: flex;
@@ -302,19 +307,20 @@ html, body {
 
 /* TEXT */
 .benefit-text h4 {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
   margin-bottom: 6px;
-
   color: #111;
 }
 
 .benefit-text p {
-  font-size: 15.5px;
-  line-height: 1.7;
-  color: #444;
-  max-width: 520px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: rgb(28, 16, 24);
 }
+
 
 /* OPTIONAL VERTICAL LINE */
 .benefits-right::before {
@@ -366,8 +372,9 @@ html, body {
 }
 
 /* Stats Card */
+
 .stats-icon {
-  width: 38px;
+  width: 48px;
   height:38px;
   background: #fff;
   color: #6c2db5;
@@ -379,8 +386,9 @@ html, body {
 }
 
 .stats-card h3 {
-  font-size: 32px;
-  font-weight: 800;
+  font-size: 35px;
+  font-weight:800;
+  font-family:"Work Sans", sans-serif;
   margin: 0;
 }
 
@@ -389,53 +397,54 @@ html, body {
   margin: 0;
 }
 .partners-section {
-  padding: 80px 20px;
+  padding: 60px 0;
   background: #fff;
 }
 
 .partners-title {
   text-align: center;
-  font-size: 45px;
-  font-weight: 700;
-  margin-bottom: 50px;
+  font-size: 22px;
+  margin-bottom: 30px;
 }
 
-/* VIEWPORT */
 .partners-slider {
- max-width: 700px;     /* 👈 controls 4 logos */
+  max-width: 720px;
   margin: auto;
   overflow: hidden;
 }
 
-/* TRACK */
 .partners-track {
   display: flex;
   gap: 30px;
-  transition: transform 0.6s ease;
 }
 
-/* LOGOS */
 .partners-track img {
-  width: 150px;         /* 👈 4 logos fit */
+  width: 150px;
   height: 90px;
+  padding: 12px;
   object-fit: contain;
-  flex-shrink: 0;
-  
+  background: #f2f2f2;
+  border-radius: 8px;
 }
-
-/* MOBILE */
 
 
 
 .para_text1{
    margin-top:15px;
-  font-size:14px;
+  font-size:13px;
+  font-weight: 500;
   line-height: 19.2px;
+  font-family: Montserrat, sans-serif;
+  color: black;
+  width: 450px;
 }
 .para_text2{
    margin-bottom: 12px;
-  font-size:14px;
+     font-weight: 500;
+  font-size:13px;
    line-height: 19.2px;
+    font-family: Montserrat, sans-serif;
+    color: black;
 }
 
 .about-section {
@@ -468,13 +477,13 @@ html, body {
 
 .about-container {
     width: 100%;
-    max-width: 920px;   /* ✅ your required width */
+    max-width: 1020px;   /* ✅ your required width */
     margin: 0 auto;
     /* padding-left: 15px; */
     padding-right: 15px;
 
     display: flex;
-    gap: 70px;
+    
     align-items: center;
     position: relative;
     z-index: 1;
@@ -484,26 +493,30 @@ html, body {
 /* LEFT CONTENT */
 .about-left {
     flex: 1;
+    margin-left: 60px;
 }
 
 .about-left h2 {
-    font-size: 25px;
-    font-weight: 700;
-    color: #1a0f1e;
-    /* margin-bottom: 25px; */
-    /* line-height: 1.2; */
+  font-family: "Work Sans", sans-serif;
+  font-size: 30px;          /* ← was 31px */
+  font-weight: 700;
+  line-height: 51px;        /* ← missing before */
+  color: rgb(28, 16, 24);   /* exact inspector color */
 }
 
 .about-text {
-    font-size: 14px;
+    font-size: 13px;
     color: #333;
     margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     /* line-height: 1.7; */
 }
 
 .about-text strong {
     color: #1a0f1e;
     font-weight: 600;
+         font-family: 'Montserrat', sans-serif;
 }
 
 /* Features */
@@ -511,7 +524,7 @@ html, body {
     display: flex;
     gap: 15px;
     align-items: flex-start;
-    margin-top: 10px;
+    margin-top: 14px;
     /* margin-bottom: 20px; */
 }
 
@@ -543,14 +556,19 @@ html, body {
 .feature div h4 {
     font-size:18px;
     font-weight: 700;
-    /* margin-bottom: 5px; */
+    font-family: "Work Sans", sans-serif;
     color: #1a0f1e;
+    
 }
 
 .feature div p {
     font-size: 13.5px;
     color: black;
     line-height: 1.5;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 7px;
+      width: 350px;
+      font-weight: 500;
 }
 
 .feature div p strong {
@@ -560,22 +578,20 @@ html, body {
 
 .about-btn {
     margin-top: 35px;
-    background: linear-gradient(135deg, #e94b64 0%, #d43d55 100%);
+    background:#d33d5a;
     color: #fff;
     border: none;
     padding: 8px 18px;
     border-radius: 30px;
     font-size: 12px;
-    font-weight: 600;
+
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rba(233, 75, 100, 0.3);
 }
 
 .about-btn:hover {
-    background: linear-gradient(135deg, #d43d55 0%, #c02f47 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(233, 75, 100, 0.4);
+    background-color:#6929b6 ;
 }
 
 /* RIGHT CONTENT */
@@ -668,7 +684,7 @@ html, body {
     border-right: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;
     background: #fff;
-    min-height: 240px;
+    min-height: 210px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -688,35 +704,48 @@ html, body {
 
   /* INTRO CARD */
   .service.intro h2 {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 1.25;
     margin-bottom: 15px;
     color: #1a0f1e;
+    font-family:"Montserrat", sans-serif;
   }
 
   .service.intro p {
-    font-size: 14.5px;
-    line-height: 1.2;
-    color: black;
-    
+    font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  width: 240px;
+ 
     
   }
 
   .view-link {
-    margin-top: auto;
+    margin-top:20px ;
     color: #6c2db5;
     font-weight: 600;
     text-decoration: none;
+    font-size: 12px;
+    font-family: Montserrat, sans-serif;
   }
 
   /* ICON */
   .service_icon {
-    font-size:21px;
+      width: 50px;
+  height: auto;
     margin-bottom: 5px;
     color: #6c2db5;
     transition: color 0.3s ease;
   }
+
+
+
+
+    
+  
 
   /* TITLE */
   .service h3 {
@@ -729,6 +758,11 @@ html, body {
   /* TEXT */
   .service p{
   font-size: 14.5px;
+    font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
   
     color: black;
   }
@@ -740,11 +774,19 @@ html, body {
   }
 
   .service p {
-    font-size: 13px;
-    ;
+    font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+   width: 230px;
   }
   .service span {
-    font-size: 13px;
+   font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
     margin-top: 9px;
     margin-bottom: 19px;
   }
@@ -813,12 +855,12 @@ html, body {
 
 .bg-card {
   position: absolute;
-  top: -40px;
-  left:0px;
-  width: 75%;
+  top: -78px;
+  left:59px;
+  width: 59%;
   height: 112%;
   background: #6d2db5;
-  border-radius: 28px;
+  border-radius: 16px;
   z-index: 1;
 }
 
@@ -836,7 +878,8 @@ html, body {
   width: 75%;
    z-index: 2;
   display: block;
-  left:45px;
+  left:94px;
+  top:-40px;
   border-radius: 26px;
 }
 
@@ -855,18 +898,22 @@ html, body {
 }
 
 .intro-text {
-  font-size: 12.7px;
-  /* line-height: 1.7; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: rgb(28, 16, 24);
   color: black;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   margin-top: 5px;
+  width: 400px;
 }
 
 /* FEATURES */
 .feature-list {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 15px;
   margin-bottom: 35px;
 }
 
@@ -894,14 +941,21 @@ html, body {
 
 
 .feature-item h4 {
-  font-size: 15px;
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
   font-weight: 700;
+  font-size: 14px;
+  line-height: 26px;
+  color: rgb(28, 16, 24);
   /* margin-bottom: 6px; */
 }
 
 .feature-item p {
-  font-size: 13px;
-  /* line-height: 1.6; */
+  
+    font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 22px;
   color: black;
   line-height:15px;
   margin-top: 5px;
@@ -943,29 +997,34 @@ html, body {
   max-width: 920px;              /* SAME AS OTHER SECTIONS */
   margin: 0 auto;
   display: flex;
-  gap: 15px;                     /* clean spacing */
+                   /* clean spacing */
   align-items: center;
 }
 
 /* LEFT */
 .term-left {
   flex: 1.1;
+  margin-left: 40px;
 }
 
 .term-left h2 {
-  font-size: 35px;
+  font-size: 32px;
   font-weight: 700;
-  /* line-height: 1.25; */
+  font-family: "Work Sans", sans-serif;
   color: #1a0f1e;
   margin-bottom: 10px;
+  width: 380px;
+  margin-left: 0px;
 }
 
 .term-text {
-  font-size: 14px;
-  width: 450px;
-  /* line-height: 1.7; */
+  font-size: 12px;
+  width: 420px;
+  line-height: 17px;
+  font-family:Montserrat, sans-serif;
   color: black;
   margin-bottom: 18px;
+  font-weight:500;
 }
 
 .term-text strong {
@@ -973,7 +1032,7 @@ html, body {
 }
 
 .tc {
-  font-size: 13px;
+  font-size: 10px;
   color: black;
 }
 
@@ -988,14 +1047,14 @@ html, body {
   width: 100%;
   max-width: 420px;              /* SAME visual scale as image */
   height: auto;
-  display: block;
+  margin-right: 100px;
 }
 
 /* STATS */
 .term-stats {
   width: 100%;
   max-width: 920px;
-  margin: 80px auto 0;
+  margin: 60px auto 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
@@ -1003,6 +1062,7 @@ html, body {
 
 .stat h3 {
   font-size: 42px;
+
   font-weight: 800;
   color: #1a0f1e;
   margin-bottom: 6px;
@@ -1012,14 +1072,15 @@ html, body {
   font-size: 14px;
   color: black;
   font-weight:500;
+  font-family: "Work Sans", sans-serif;
 }
 
 /* RESPONSIVE */
 
 .quote-section {
   background: #6c2db5;
-  padding: 200px 20px;
-  margin-top: 130px;
+  padding: 90px 20px;
+  margin-top: 20px;
 }
 
 .quote-scale{
@@ -1699,7 +1760,7 @@ body {
   background: #6d28d9;              /* Purple */
   color: #fff;
   
-  padding: 15px 15px;
+  padding: 15px 35px;
   border-radius: 18px;
   margin-top: 160px;
   width: fit-content;
