@@ -1508,6 +1508,7 @@ select {
   color: #ffffff;
   font-size: 18px;
   margin-bottom: 20px;
+  font-family: 'Inter', sans-serif;
 }
 
 /* ABOUT TEXT */
@@ -1541,10 +1542,12 @@ select {
 .footer ul {
   list-style: none;
   padding: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .footer ul li {
   margin-bottom: 10px;
+  font-family: 'Inter', sans-serif;
 }
 
 .footer ul li a {
@@ -1552,6 +1555,7 @@ select {
   font-weight:400;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-family: 'Inter', sans-serif;
 }
 
 /* 🔥 PINK HOVER */
@@ -1566,6 +1570,7 @@ select {
   margin-bottom: 12px;
   align-items: flex-start;
   transition: color 0.3s ease;
+  color: #bdbdbc;
 }
 
 .contact-item span {
