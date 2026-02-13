@@ -228,3 +228,58 @@ document.addEventListener("DOMContentLoaded", () => {
     if (diff < -60) nextSlide();
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const snowhillCounterInit = () => {
+    const counter = document.querySelector(".count-number");
+    if (!counter) return;
+
+    const targetValue = +counter.getAttribute("data-target");
+    let currentValue = 0;
+
+    const snowhillUpdateCounter = () => {
+      const increment = Math.ceil(targetValue / 150);
+
+      currentValue += increment;
+
+      if (currentValue < targetValue) {
+        counter.innerText = currentValue;   // ❌ no comma
+        requestAnimationFrame(snowhillUpdateCounter);
+      } else {
+        counter.innerText = targetValue + "+"; // final value
+      }
+    };
+
+    snowhillUpdateCounter();
+  };
+
+  const snowhillObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          snowhillCounterInit();
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  const aboutCard = document.querySelector(".about_card");
+  if (aboutCard) {
+    snowhillObserver.observe(aboutCard);
+  }
+
+});
+
